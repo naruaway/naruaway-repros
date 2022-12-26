@@ -10,8 +10,13 @@ const main = async () => {
 
   // cf. [Server-Side Rendering | Vite](https://vitejs.dev/guide/ssr.html)
   const vite = await createViteServer({
-  base: '/my-vite-path/',
-    server: { middlewareMode: true },
+    base: "/my-vite-path/",
+    server: {
+      middlewareMode: true,
+      hmr: {
+        server,
+      },
+    },
     appType: "custom",
   });
 
